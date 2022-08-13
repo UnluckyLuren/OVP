@@ -90,7 +90,6 @@ module.exports = {
 
         new CopyPlugin({
             patterns: [ 
-                { from: "src/assets/", to: "assets/" },
                 { from: "src/css/", to: "css/" } ,
                 { from: "src/Main", to: "Main/" },
                 { from: "src/Edition/", to: "Edition/" }
