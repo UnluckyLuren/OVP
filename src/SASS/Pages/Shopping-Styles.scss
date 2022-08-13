@@ -1,0 +1,454 @@
+@import "../Utils/Variables";
+@import "../Utils/Mixins";
+@import "../Layout/Layout-Display";
+
+
+.body-scroll {
+    overflow-y: hidden;
+}
+
+
+/* Menu */
+
+#navegador ul{
+    background-color: var(--Color-Menu);
+    list-style-type: none;
+    display: flex;
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 5em;
+ }
+ #navegador li{
+    display: inline;
+    text-align: left;
+    margin: 0px 2em 0 0;
+
+    @include RWD(large) {
+        display: none;
+    }
+
+ }
+ 
+ #navegador ul li:first-child {
+    margin-left: 2em;
+ }
+
+ #navegador li a {
+    padding: 10px;
+    color: white;
+    font-size: large;
+    text-decoration: none;
+ }
+ #navegador li a:hover, .container_form p a:hover{
+    color: var(--Color-hover);
+ }
+ 
+ /* Marca del menu */
+
+ .Marca{
+    position: absolute;
+    top: 1.1em;
+    right: 1em;
+ }
+
+
+ /* Acomodo del menu cuando sea emergente */
+
+.Menu-emergente-image {
+    display: none;
+    position: absolute;
+    z-index: var(--z-Superior);
+
+    @include RWD(medium) {
+        display: inline;
+    }
+}
+
+.Menu-emergente-image img {
+    width:3rem;
+    height:3rem;
+    margin: 1rem;
+}
+
+.Menu-emergente {
+    display: none;
+    content:"";
+    position: fixed;
+    top: 5rem;
+    left: -80vw;
+    background-color: var(--color-page);
+    width: 80vw;
+    height: 100vh;
+    z-index: var(--z-container);
+    transition: right 0.2s;
+}
+
+
+.Look-menu-emergente {
+    left: 0;
+}
+
+
+/* Estilos del Aside pagina de desktop*/
+
+@media screen and (min-width:1025px) {
+
+    .Menu-aside {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        @include RWD(large) {
+            display: none;
+        }
+
+    }
+
+    .Menu-aside li {
+        margin: 1em 0 0 1em;
+        flex: 1;
+        padding-bottom: 1em;
+    }
+
+    .Menu-aside li:first-child:not(.Lista-Categorias li:first-child) {
+        margin: 0;
+        padding:2em 7.5em 0.5em 2em;
+        border-bottom: var(--Separation-aside);
+    }
+
+    .Menu-aside li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .User-img a img {
+        background-color: white;
+        width: 50px;
+        height: 50px;
+        border: 3px solid;
+        border-radius: 50%;
+    }
+
+    .Menu-aside li a:hover {
+        color: var(--Color-hover);
+    }
+
+    .Lista-Categorias li a {
+        margin-top: 1.5em;
+        color:var(--Color-Menu);
+    }
+
+    .Lista-Categorias li:first-child {
+        margin: 2em 0 2em 1em;
+        list-style-type:circle;
+        color: black;
+    }
+
+}
+
+
+/* Estilos del Aside responsive*/
+
+@media screen and (min-width:280px) and (max-width:1024px) {
+
+    .Menu-aside {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .Menu-aside li {
+        margin: 1em 0 0 1em;
+        flex: 1;
+    }
+    
+    .Menu-aside li:first-child:not(.Lista-Categorias li:first-child) {
+        margin: 0;
+        padding:2em 7.5em 0.5em 2em;
+        border-bottom: var(--Separation-aside);
+    }
+    
+    .Menu-aside li a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .Menu-aside li a img:not(.Perfil-User-menu a img) {
+        width: 1.5em;
+        height: 1.5em;
+        margin:0;
+    }
+    
+    .Perfil-User-menu a img {
+        background-color: white;
+        width: 3rem;
+        height: 3rem;
+        border: 3px solid;
+        border-radius: 50%;
+    }
+    
+    .Menu-aside li:last-of-type {
+        padding-bottom: 1em;
+        border-bottom: var(--Separation-aside);
+    }
+    
+    .Menu-aside li a:hover {
+        color: var(--Color-hover);
+    }
+    
+    .Lista-Categorias li a {
+        margin-top: 1.5em;
+        color:var(--Color-Menu);
+    }
+    
+    .Lista-Categorias li:first-of-type {
+        margin: 2em 0 2em 2em;
+        list-style-type:circle;
+        color: black;
+    }
+       
+}
+
+
+/* Estilizado del plano a comprar */
+
+.buy-edit img {
+
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: var(--Shadow-CTG);
+    width: 40%;
+    margin: 3em;
+    margin-bottom: 1em;
+    padding: 3em;
+
+    @include RWD(large) {
+        padding: 0;
+        width: 70%;
+    }
+
+}
+
+/* Estilizado descripción */
+
+.Text-description{
+    position: absolute;
+    top: 7rem;
+    right: 8rem;
+
+    // @include RWD(xx-large) {
+    //     top: 10vh;
+    //     right: 15vw;
+    // }
+
+    @include RWD(large) {
+        top: 65vh;
+        right:40vw;
+    }
+
+    @include RWD(medium) {
+        top: 50vh;
+        right: 35vw;
+    }
+
+    @include RWD(intermedium) {
+        top: 40vh;
+    }
+
+    @include RWD(x-small) {
+        top: 50vh;
+    }
+
+    @include RWD(small) {
+        top: 40vh;
+    }
+
+
+}
+
+.sepr-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+
+    @include RWD(large) {
+        display: none;
+    }
+
+}
+
+.sepr-description li {
+    list-style-type: none;
+
+    @include RWD(xx-large) {
+        width: 20rem;
+    }
+
+}
+
+.sepr-description li h1 {
+    font-size: x-large;
+
+    @include RWD(xx-large) {
+        font-size: large;
+    }
+
+}
+
+.sepr-description li p {
+    margin-bottom: 2em;
+    font-size: x-large;
+    text-align: justify;
+
+    @include RWD(xx-large) {
+        font-size: large;
+        margin: 1rem;
+    }
+
+
+}
+
+.container-text {
+    width: 40em;
+
+    @include RWD(xx-large) {
+        width: 20rem;
+    }
+
+
+}
+
+/* Especificaciones */
+
+.text-view-description ul {
+    list-style-type:circle;
+    background-color:white;
+    box-shadow: var(--Shadow-CTG);
+    border-radius: 1em;
+    margin:1em 0 0 2em;
+    padding: 1em;
+
+    @include RWD(large) { 
+        width: min-content;
+        margin-top: 8rem;
+    }
+
+}
+
+.text-view-description ul li {
+    margin-left: 1em;
+}
+
+.text-view-description p {
+    font-size: large;
+    width: 40em;
+
+    @include RWD (large) {
+        width:70vw;
+    }
+
+}
+
+.text-view-description ul h1 {
+    font-size: x-large;
+    margin-bottom: 1em;
+}
+
+.Compra {
+    background-color:darkkhaki;
+    color: black;
+    border-radius: 1em;
+    font-size: x-large;
+    width: 7em;
+    height: 3em;
+    margin: 0 0 0 20rem;
+
+    @include RWD(xx-large) {
+        font-size: large;
+        margin:0 10rem;
+        display: inline;
+    }
+
+
+    @include RWD(large) {
+        margin: 0;
+    }
+
+}
+
+
+/* Exibición de planos */
+
+.CTG h1 {
+    margin: 3em 0 0 2em;
+    font-size: x-large;
+}
+
+.CTG ul {
+    list-style-type: none;
+    margin: 1em 2em 0 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    border: 1em solid white;
+    box-shadow: var(--Shadow-CTG);
+    border-radius: 20px;
+    align-items: center;
+
+    @include RWD(large) {
+        margin: 1rem auto;
+        width: 70vw;
+        padding: 0;
+    }
+
+}
+
+.CTG ul li {
+    flex: 1;
+    margin: 0 1.5em;
+    padding:0;
+    text-align:center;
+
+    @include RWD(large) {
+        margin: 0;
+    }
+
+}
+
+.CTG ul li img:not(.Mostrar-Mas a img) {
+    width: 8em;
+    height: 8em;
+    margin:0;
+    padding: 10px;
+    background-color: var(--Col-Background);
+    border-radius: 20px;
+}
+
+.CTG ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.CTG ul li img:hover:not(.Mostrar-Mas a img) {
+    border: 1px solid blue;
+}
+
+
+.Mostrar-Mas {
+    margin: 0;
+}
+
+.Mostrar-Mas a img {
+    margin: 0;
+    width: 2em;
+    height: 2em;
+}
+
+

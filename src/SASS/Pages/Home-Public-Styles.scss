@@ -1,0 +1,618 @@
+@import "../Utils/Variables";
+@import "../Utils/Mixins";
+@import "../Components/Final-Footer";
+
+Body {
+    background-image: url(/Main/img/BG-Invitado.jpg);
+    background-repeat: no-repeat;
+    background-size:100vw;
+    background-color: var(--color-page);
+    overflow-x: hidden;
+
+    @include RWD(x-large) {
+        background-size: cover;
+        background-position: top;
+
+    }
+}
+
+.body-scroll {
+    overflow-y: hidden;
+}
+
+
+/* Para el menu de arriba */
+
+.Menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* box-shadow: 0 4px 3px rgba(0,0,0,.5); */
+}
+
+/* Estilo Marca de agua */
+
+.Marca{
+   position: absolute;
+   top: 0.9em;
+   right: 1em;
+   z-index: var(--z-Superior);
+}
+
+.Pag-Marca{
+    position: absolute;
+    top: 250px;
+    width: 1700px;
+}
+
+
+
+/* Estilos para el navegador */
+
+.Init_Regist {
+    display: flex;
+    align-items: center;
+}
+
+.navegacion ul{
+    list-style-type: none;
+    padding: 30px;
+    background-color: var(--Color-Menu);
+    border-radius: 100px;
+    box-shadow: 0 4px 3px rgba(0,0,0,.5);
+    z-index: var(--z-Superior);
+
+    @include RWD(large) {
+        display: none;
+    }
+ }
+
+ .navegacion li{
+   display: inline;
+   font-size: large;
+   margin: 0 50px 0 0;
+ }
+
+ .navegacion li.margen-menu {
+    margin-right: 0 ;
+}
+
+ .navegacion li a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+ }
+
+ .navegacion li a:hover{
+    color: rgb(78, 76, 92);
+ }
+
+ .Pabs-init-menu {
+    position: absolute;
+    top: 5em;
+    right: 1em;
+ }
+
+ .Fix-init-menu  {
+    position: fixed;
+    top:0;
+    right:1em;
+ }
+
+
+/* Estilo Iniciar Sesión Registrarse */
+
+
+.Init_Regist ul {
+    background-color: var(--Color-Menu);
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 5em;
+    position: relative;
+}
+
+ .Init_Regist li, li.User-img a img {
+   margin:0;
+   margin-right: 2rem;
+ }
+
+ .Init_Regist ul li {
+    @include RWD(medium) {
+        display: none;
+    }
+ }
+
+
+li.User-img a {
+  
+    position: absolute;
+    top: 1.5em;
+    left: 1em;
+
+}
+
+.User-img{
+    @include RWD(medium) {
+        display: none;
+    }
+}
+
+.sep-acomodo {
+    margin-left: 5em;
+}
+
+ .Init_Regist li a{
+       /* Estilo */
+       padding: 10px;
+       font-size: large;
+       color: white;
+       text-decoration: none;
+
+}
+
+
+ .Init_Regist li a:hover, a.contact-gmail:hover, li.User-img a img:hover, .Editor-atribuciones a:hover, .text-Atribuciones a:hover, .redes-de-enlace a:hover {
+    color: rgb(90, 88, 109);
+}
+
+
+/* Acomodo del menu cuando sea emergente */
+
+.Menu-emergente-image {
+    display: none;
+    position: absolute;
+    z-index: var(--z-Superior);
+
+    @include RWD(medium) {
+        display: inline;
+    }
+}
+
+.Menu-emergente-image img {
+    width:3rem;
+    height:3rem;
+    margin-left: 1rem;
+}
+
+.Menu-emergente {
+    display: none;
+    content:"";
+    position: fixed;
+    top: 5rem;
+    left: -80vw;
+    background-color: var(--color-page);
+    width: 80vw;
+    height: 100vh;
+    z-index: var(--z-container);
+    transition: right 0.2s;
+}
+
+
+.Look-menu-emergente {
+    left: 0;
+}
+
+
+/* Estilos del Aside */
+
+.Menu-aside {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Menu-aside li {
+    margin: 1em 0 0 1em;
+    flex: 1;
+}
+
+.Menu-aside li:first-child:not(.Lista-Categorias li:first-child) {
+    margin: 0;
+    padding:2em 7.5em 0.5em 2em;
+    border-bottom: var(--Separation-aside);
+}
+
+.Menu-aside li a {
+    text-decoration: none;
+    color: black;
+}
+
+.Menu-aside li a img:not(.Perfil-User-menu a img) {
+    width: 1.5em;
+    height: 1.5em;
+    margin:0;
+}
+
+.Perfil-User-menu a img {
+    background-color: white;
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid;
+    border-radius: 50%;
+}
+
+.Menu-aside li:last-of-type {
+    padding-bottom: 1em;
+    border-bottom: var(--Separation-aside);
+}
+
+.Menu-aside li a:hover {
+    color: var(--Color-hover);
+}
+
+.Lista-Categorias li a {
+    margin-top: 1.5em;
+    color:var(--Color-Menu);
+}
+
+.Lista-Categorias li:first-of-type {
+    margin: 2em 0 2em 2em;
+    list-style-type:circle;
+    color: black;
+}
+
+
+
+/* Imágen usuario */
+
+
+    li.User-img a img /* div */ {
+    background-color: white;
+    border: 3px solid;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 15px;
+    top: -15px;
+}
+
+
+/* Texto página principal */
+
+.Pag-1-Presentation {
+    width: 30vw;
+    margin: 5em 0 0 5em;
+    @include RWD(large) {
+        width: 50vw;
+    }
+}
+
+.Pag-1-Presentation p {
+    font-size: x-large;
+    color: white;
+
+    @include RWD(large) {
+        font-size: medium;
+    }
+   
+}
+
+
+.Pag-1-Presentation h1, .Pag-1-Presentation h2 {
+   font-size: 3em;
+    color: white;
+
+   @include RWD(x-large) {
+    font-size: xx-large;
+    }
+}
+
+.Pag-1-Presentation p:last-of-type {
+    @include RWD(large) {
+        display: none;
+    }
+}
+
+.Pag-1-Presentation h2 {
+    @include RWD(large) {
+        display: none;
+    }
+}
+
+.Btn-crear {
+    padding: 1em;
+    margin-top: 1em;
+    font-size: large;
+    color: white;
+    background-color: var(--Color-Menu);
+    border-radius: 0.5em;
+    box-shadow:var(--shadow);
+}
+
+.section-of-examples {
+    content:"";
+    width: 100vw;
+    padding: 5em;
+    height:min-content;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 15em 0 0 0;
+    z-index:-1;
+    background-color: var(--Color-BG-sections);
+    @include RWD(x-large) {
+        margin: 0;
+        display:none;
+    }
+}
+
+.text-examples-1, .text-examples-2 {
+    width: 40%;
+    background-color: var(--Color-text-section-examples);
+    height: min-content;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: auto;
+}
+
+.text-examples-1 p, .text-examples-1 h1, .text-examples-2 p, .text-examples-2 h1 {
+    font-size: 2em;
+    color: white;
+}
+
+.image-section-example {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 12rem;
+    z-index:0;
+
+    @include RWD(x-large) {
+        margin: 0;
+        display: none;
+    }
+}
+
+.Image-create-a-plan {
+    width: 40%;
+    margin-top: 40em;
+    padding:2em;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+/* Información después de la sección de ejemplos */
+
+.Information {
+    display: flex;
+    justify-content: center;
+}
+
+
+.Text-before-examples {
+    height: min-content;
+    width:50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    @include RWD(x-large) {
+        margin-top:70vh;
+    }
+
+    @include RWD(medium) {
+        width: 100%;
+        padding: 2rem;
+        margin-top:40vh;
+    }
+
+}
+
+
+.Text-before-examples p {
+    font-size: x-large;
+    text-align: justify;
+    // margin-left:3em;
+
+    @include RWD(x-large) {
+        margin: 0 1rem;
+        padding: 1rem;
+    }
+}
+
+.Text-before-examples p:first-of-type {
+    margin-top: 2em;
+}
+
+.Text-before-examples h1, .Text-before-examples h2 {
+    text-align: center;
+    // @include RWD(x-large) {
+    // }
+}
+
+
+.Text-before-examples h1 {
+    padding-top: 2em;
+}
+
+.Text-before-examples img {
+    margin-top: 1em;
+    padding-bottom: 2em;
+    width: 35em;
+    border-bottom: 2px solid ;
+
+    @include RWD(large) {
+        margin: 0;
+        padding: 2rem;
+        width:100vw;
+    }
+}
+
+
+/* Imagen pagina 1 */
+
+.Img-info-1 img {
+    position:absolute;
+    top: 18rem;
+    right: 10rem;
+    width: 50vw;
+    z-index: -1;
+
+    @include RWD(x-large) {
+        display: none;
+    }
+}
+
+/* Acomodo del apartado de información */
+
+.Fix-Promotion {
+    transition: all 0.2s;
+    position:fixed;
+    top: 11rem;
+    right: 1rem;
+}
+
+.abs-promotion {
+    transition: all 0.2s;
+    z-index: var(--z-back);
+    @include RWD(large) {
+        display: none;
+        margin: 0;
+    }
+}
+
+
+.Crear-ahora {
+    height: 30em;
+    width: 23em;
+    margin: 5em 0 0 5em;
+    padding: 1em;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: var(--shadow-content-promove);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: var(--z-back);
+
+    @include RWD(x-large) {
+        top: 10rem;
+        right: 10rem;
+    }
+}
+
+.Crear-ahora h1 {
+    font-size: x-large;
+}
+
+.Crear-ahora p {
+    font-size: large;
+    border-bottom: var(--Border-bootom-white);
+    padding-bottom: 1em;
+}
+
+
+.Crear-ahora img {
+    margin: 1em 0 2em 0;
+    width: 10em;
+    height:10em;
+}
+
+.Crear-ahora button {
+    padding: 1em;
+    border-radius: 0.5em;
+    border: white;
+    color: white;
+    background-color: var(--Color-User-page );
+}
+
+
+
+/* Acomodo de la ultima parte */
+
+.muestras-de-planos {
+    background-color: var(--Color-BG-sections);
+    height:min-content;
+    margin: 0;
+    margin-top: 5em;
+    padding: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2em;
+
+    @include RWD(medium) {
+        display: none;
+    }
+}
+
+.muestras-de-planos a{
+    text-decoration: none;
+    color: black;
+}
+
+.Container-examples-plans {
+    background-color: white;
+    width: 20rem;
+    height: 25rem;
+    border-radius: 0.5em;
+    box-shadow: var(--shadow );
+    padding: 0;
+}
+
+
+.Container-examples-plans img {
+    width:inherit;
+    height: 20em;
+    padding: 2em;
+}
+
+.Container-examples-plans h2 {
+    text-align: center;
+}
+
+
+.Crear-footer {
+    margin-top:5.5em;
+    padding: 2rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/Main/img/Arquitectura.jpg");
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.Crear-footer button {
+    padding: 1em;
+    border-radius: 0.5em;
+    border: white;
+    color: white;
+    background-color: var(--Color-User-page );
+    font-size:x-large;
+    margin: 2em 0 5em 0;
+}
+
+.Crear-footer img {
+    width:100vw;
+}
+
+.Crear-footer p {
+    font-size: larger;
+    color:var(--color-page);
+    text-shadow: var(--Text-bck-shadow);
+}
+
+.Crear-footer h1 {
+    color: var(--color-page);
+    text-shadow: var(--Text-bck-shadow);
+}
+
+
+
+
+

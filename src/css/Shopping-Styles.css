@@ -1,0 +1,552 @@
+@charset "UTF-8";
+/* Variables del Root Generales */
+/* Buy Variables css */
+/* Catalogo Variables css */
+/* Login Regist Variables */
+/* Variables Pago */
+/* Break Points */
+/* Z index */
+:root {
+  --z-back:-10;
+  --z-Normal:1;
+  --z-Superior:10;
+  --z-Fixed:100;
+  --z-container:1000;
+}
+
+/* Variables Root */
+/* Mixin BeakPoints */
+/* Mixin Heigth */
+body {
+  display: -ms-grid;
+  display: grid;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  background-color: var(--Col-Background);
+      grid-template-areas: 'header header' 'aside main' 'footer footer';
+  -ms-grid-rows: min-content 4fr min-content;
+      grid-template-rows: -webkit-min-content 4fr -webkit-min-content;
+      grid-template-rows: min-content 4fr min-content;
+  -ms-grid-columns: 15rem 1fr;
+      grid-template-columns: 15rem 1fr;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    display: inline;
+  }
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: header;
+  background-color: var(--Color-Menu);
+}
+
+aside {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: aside;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  aside {
+    display: none;
+    margin: 0;
+  }
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: main;
+  background-color: var(--Col-Background);
+}
+
+footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: footer;
+  margin-top: 2em;
+  padding: 0;
+}
+
+.body-scroll {
+  overflow-y: hidden;
+}
+
+/* Menu */
+#navegador ul {
+  background-color: var(--Color-Menu);
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 5em;
+}
+
+#navegador li {
+  display: inline;
+  text-align: left;
+  margin: 0px 2em 0 0;
+}
+
+@media screen and (max-width: 1024px) {
+  #navegador li {
+    display: none;
+  }
+}
+
+#navegador ul li:first-child {
+  margin-left: 2em;
+}
+
+#navegador li a {
+  padding: 10px;
+  color: white;
+  font-size: large;
+  text-decoration: none;
+}
+
+#navegador li a:hover, .container_form p a:hover {
+  color: var(--Color-hover);
+}
+
+/* Marca del menu */
+.Marca {
+  position: absolute;
+  top: 1.1em;
+  right: 1em;
+}
+
+/* Acomodo del menu cuando sea emergente */
+.Menu-emergente-image {
+  display: none;
+  position: absolute;
+  z-index: var(--z-Superior);
+}
+
+@media screen and (max-width: 640px) {
+  .Menu-emergente-image {
+    display: inline;
+  }
+}
+
+.Menu-emergente-image img {
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem;
+}
+
+.Menu-emergente {
+  display: none;
+  content: "";
+  position: fixed;
+  top: 5rem;
+  left: -80vw;
+  background-color: var(--color-page);
+  width: 80vw;
+  height: 100vh;
+  z-index: var(--z-container);
+  -webkit-transition: right 0.2s;
+  transition: right 0.2s;
+}
+
+.Look-menu-emergente {
+  left: 0;
+}
+
+/* Estilos del Aside pagina de desktop*/
+@media screen and (min-width: 1025px) {
+  .Menu-aside {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1024px) {
+  .Menu-aside {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .Menu-aside li {
+    margin: 1em 0 0 1em;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding-bottom: 1em;
+  }
+  .Menu-aside li:first-child:not(.Lista-Categorias li:first-child) {
+    margin: 0;
+    padding: 2em 7.5em 0.5em 2em;
+    border-bottom: var(--Separation-aside);
+  }
+  .Menu-aside li a {
+    text-decoration: none;
+    color: black;
+  }
+  .User-img a img {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border: 3px solid;
+    border-radius: 50%;
+  }
+  .Menu-aside li a:hover {
+    color: var(--Color-hover);
+  }
+  .Lista-Categorias li a {
+    margin-top: 1.5em;
+    color: var(--Color-Menu);
+  }
+  .Lista-Categorias li:first-child {
+    margin: 2em 0 2em 1em;
+    list-style-type: circle;
+    color: black;
+  }
+}
+
+/* Estilos del Aside responsive*/
+@media screen and (min-width: 280px) and (max-width: 1024px) {
+  .Menu-aside {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .Menu-aside li {
+    margin: 1em 0 0 1em;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .Menu-aside li:first-child:not(.Lista-Categorias li:first-child) {
+    margin: 0;
+    padding: 2em 7.5em 0.5em 2em;
+    border-bottom: var(--Separation-aside);
+  }
+  .Menu-aside li a {
+    text-decoration: none;
+    color: black;
+  }
+  .Menu-aside li a img:not(.Perfil-User-menu a img) {
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0;
+  }
+  .Perfil-User-menu a img {
+    background-color: white;
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid;
+    border-radius: 50%;
+  }
+  .Menu-aside li:last-of-type {
+    padding-bottom: 1em;
+    border-bottom: var(--Separation-aside);
+  }
+  .Menu-aside li a:hover {
+    color: var(--Color-hover);
+  }
+  .Lista-Categorias li a {
+    margin-top: 1.5em;
+    color: var(--Color-Menu);
+  }
+  .Lista-Categorias li:first-of-type {
+    margin: 2em 0 2em 2em;
+    list-style-type: circle;
+    color: black;
+  }
+}
+
+/* Estilizado del plano a comprar */
+.buy-edit img {
+  background-color: white;
+  border: 1px solid black;
+  -webkit-box-shadow: var(--Shadow-CTG);
+          box-shadow: var(--Shadow-CTG);
+  width: 40%;
+  margin: 3em;
+  margin-bottom: 1em;
+  padding: 3em;
+}
+
+@media screen and (max-width: 1024px) {
+  .buy-edit img {
+    padding: 0;
+    width: 70%;
+  }
+}
+
+/* Estilizado descripción */
+.Text-description {
+  position: absolute;
+  top: 7rem;
+  right: 8rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .Text-description {
+    top: 65vh;
+    right: 40vw;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Text-description {
+    top: 50vh;
+    right: 35vw;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .Text-description {
+    top: 40vh;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .Text-description {
+    top: 50vh;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .Text-description {
+    top: 40vh;
+  }
+}
+
+.sepr-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .sepr-description {
+    display: none;
+  }
+}
+
+.sepr-description li {
+  list-style-type: none;
+}
+
+@media screen and (max-width: 1880px) {
+  .sepr-description li {
+    width: 20rem;
+  }
+}
+
+.sepr-description li h1 {
+  font-size: x-large;
+}
+
+@media screen and (max-width: 1880px) {
+  .sepr-description li h1 {
+    font-size: large;
+  }
+}
+
+.sepr-description li p {
+  margin-bottom: 2em;
+  font-size: x-large;
+  text-align: justify;
+}
+
+@media screen and (max-width: 1880px) {
+  .sepr-description li p {
+    font-size: large;
+    margin: 1rem;
+  }
+}
+
+.container-text {
+  width: 40em;
+}
+
+@media screen and (max-width: 1880px) {
+  .container-text {
+    width: 20rem;
+  }
+}
+
+/* Especificaciones */
+.text-view-description ul {
+  list-style-type: circle;
+  background-color: white;
+  -webkit-box-shadow: var(--Shadow-CTG);
+          box-shadow: var(--Shadow-CTG);
+  border-radius: 1em;
+  margin: 1em 0 0 2em;
+  padding: 1em;
+}
+
+@media screen and (max-width: 1024px) {
+  .text-view-description ul {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    margin-top: 8rem;
+  }
+}
+
+.text-view-description ul li {
+  margin-left: 1em;
+}
+
+.text-view-description p {
+  font-size: large;
+  width: 40em;
+}
+
+@media screen and (max-width: 1024px) {
+  .text-view-description p {
+    width: 70vw;
+  }
+}
+
+.text-view-description ul h1 {
+  font-size: x-large;
+  margin-bottom: 1em;
+}
+
+.Compra {
+  background-color: darkkhaki;
+  color: black;
+  border-radius: 1em;
+  font-size: x-large;
+  width: 7em;
+  height: 3em;
+  margin: 0 0 0 20rem;
+}
+
+@media screen and (max-width: 1880px) {
+  .Compra {
+    font-size: large;
+    margin: 0 10rem;
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .Compra {
+    margin: 0;
+  }
+}
+
+/* Exibición de planos */
+.CTG h1 {
+  margin: 3em 0 0 2em;
+  font-size: x-large;
+}
+
+.CTG ul {
+  list-style-type: none;
+  margin: 1em 2em 0 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: white;
+  border: 1em solid white;
+  -webkit-box-shadow: var(--Shadow-CTG);
+          box-shadow: var(--Shadow-CTG);
+  border-radius: 20px;
+  align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .CTG ul {
+    margin: 1rem auto;
+    width: 70vw;
+    padding: 0;
+  }
+}
+
+.CTG ul li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 1.5em;
+  padding: 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .CTG ul li {
+    margin: 0;
+  }
+}
+
+.CTG ul li img:not(.Mostrar-Mas a img) {
+  width: 8em;
+  height: 8em;
+  margin: 0;
+  padding: 10px;
+  background-color: var(--Col-Background);
+  border-radius: 20px;
+}
+
+.CTG ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.CTG ul li img:hover:not(.Mostrar-Mas a img) {
+  border: 1px solid blue;
+}
+
+.Mostrar-Mas {
+  margin: 0;
+}
+
+.Mostrar-Mas a img {
+  margin: 0;
+  width: 2em;
+  height: 2em;
+}
+/*# sourceMappingURL=Shopping-Styles.css.map */

@@ -1,0 +1,17 @@
+@import "../Utils/Variables";
+@import "../Utils/Mixins";
+
+
+*,*:after,*:before {
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+
+:root {
+    @include Root-variables-css;
+}
+
+
+
+
+

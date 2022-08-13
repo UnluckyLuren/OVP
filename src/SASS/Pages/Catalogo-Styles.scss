@@ -1,0 +1,467 @@
+@import "../Utils/Variables";
+@import "../Utils/Mixins";
+@import "../Layout/Layout-Display";
+@import "../Components/Final-Footer";
+
+body {
+    overflow-x: hidden;
+    // background-color: rgb(38, 152, 228);
+}
+
+.body-scroll {
+    overflow-y: hidden;
+}
+
+.Marca{
+    position: absolute;
+    top: 0.3em;
+    right: 1em;
+}
+
+/* Estilos para el navegador */
+
+#navegacion {
+    width: 100vw;
+}
+
+#navegacion ul{
+    list-style-type: none;
+    // height: 100%;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content:flex-start;
+
+    @include RWD(large) {
+        height: 5rem;
+    }
+
+ }
+
+ #navegacion li{
+    padding: 2em;
+    font-size: 1em;
+ }
+
+ #navegacion li a {
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+
+    @include RWD(large) {
+        display: none;
+    }
+
+ }
+
+ #navegacion li a:hover{
+    color: var(--Color-hover);
+ }
+
+
+/* Acomodo del menu cuando sea emergente */
+
+.Menu-emergente-image {
+    display: none;
+    position: absolute;
+    z-index: var(--z-Superior);
+
+    @include RWD(large) {
+        display: inline;
+    }
+}
+
+.Menu-emergente-image img {
+    width:3rem;
+    height:3rem;
+    margin: 1rem;
+}
+
+.Menu-emergente {
+    display: none;
+    content:"";
+    position: fixed;
+    top: 5rem;
+    left: -80vw;
+    background-color: var(--color-page);
+    width: 80vw;
+    height: 100vh;
+    z-index: var(--z-container);
+    transition: right 0.2s;
+}
+
+
+.Look-menu-emergente {
+    left: 0;
+}
+
+ 
+/* Estilos del Aside */
+
+@media screen and (min-width:1025px) {
+    .Menu-aside {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        @include RWD(large) {
+            display: none;
+        }
+    }
+
+    .Menu-aside li {
+        margin: 1em 0 0 1em;
+        flex: 1;
+    }
+
+    .Menu-aside li:first-child:not(.Lista-Categorias li:first-child) {
+        margin: 0;
+        padding:2em 7.5em 0.5em 2em;
+        border-bottom: var(--Separation-aside);
+    }
+
+    .Menu-aside li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .Menu-aside li a img:not(.User-img a img) {
+        width: 1.5em;
+        height: 1.5em;
+        margin:0;
+    }
+
+    .User-img a img {
+        background-color: white;
+        width: 50px;
+        height: 50px;
+        border: 3px solid;
+        border-radius: 50%;
+    }
+
+    .Menu-aside li:last-of-type {
+        padding-bottom: 1em;
+        border-bottom: var(--Separation-aside);
+    }
+
+    .Menu-aside li a:hover {
+        color: var(--Color-hover);
+    }
+
+    .Perfil-User-menu a img {
+        background-color: white;
+        width: 3rem;
+        height: 3rem;
+        border: 3px solid;
+        border-radius: 50%;
+    }
+
+
+    .Lista-Categorias li a {
+        margin-top: 1.5em;
+        color:var(--Color-Menu);
+    }
+
+    .Lista-Categorias li:first-child {
+        margin: 2em 0 2em 1em;
+        list-style-type:circle;
+        color: black;
+
+    }
+}
+
+/* Estilos del Aside responsive*/
+
+@media screen and (min-width:280px) and (max-width:1024px) {
+
+    .Menu-aside {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .Menu-aside li {
+        margin: 1em 0 0 1em;
+        flex: 1;
+    }
+    
+    .Menu-aside li:first-child:not(.Lista-Categorias li:first-child) {
+        margin: 0;
+        padding:2em 7.5em 0.5em 2em;
+        border-bottom: var(--Separation-aside);
+    }
+    
+    .Menu-aside li a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .Menu-aside li a img:not(.Perfil-User-menu a img) {
+        width: 1.5em;
+        height: 1.5em;
+        margin:0;
+    }
+    
+    .Perfil-User-menu a img {
+        background-color: white;
+        width: 3rem;
+        height: 3rem;
+        border: 3px solid;
+        border-radius: 50%;
+    }
+    
+    .Menu-aside li:last-of-type {
+        padding-bottom: 1em;
+        border-bottom: var(--Separation-aside);
+    }
+    
+    .Menu-aside li a:hover {
+        color: var(--Color-hover);
+    }
+    
+    .Lista-Categorias li a {
+        margin-top: 1.5em;
+        color:var(--Color-Menu);
+    }
+    
+    .Lista-Categorias li:first-of-type {
+        margin: 2em 0 2em 2em;
+        list-style-type:circle;
+        color: black;
+    }
+       
+}
+
+
+/* Barra de busqueda */
+
+.Barra-busqueda {
+    margin: 0;
+    padding:0;
+    display: inline;
+
+
+    @include RWD(large) {
+        display: none;
+        margin: 0;
+    }
+}
+
+.Barra-busqueda input{
+    display:inline;
+    margin:1em;
+    width: 0;
+    height:3em;
+    border: 2px solid;
+    border-color: transparent;
+    background-color: var(--Col-Background);
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+
+.icono-busqueda {
+    display: inline;
+    position: absolute;
+    top: 5.5em;
+    margin:0;
+
+    border: 2px solid;
+    padding: 1em;
+    width: 4em;
+    height: 4em;
+    border-radius: 30px;
+    transition: all 1s ease;
+}
+
+.Barra-busqueda:hover input{
+    width: 50%;
+    background-color: white;
+    border-color: black;
+    display: inline;
+}
+
+
+.Barra-busqueda:hover .icono-busqueda a img{
+   transform: rotate(360deg);
+   transition: .7s;
+}
+
+
+
+/* Exibición de planos */
+
+.CTG h1 {
+    margin: 2em 0 0 2em;
+    font-size: x-large;
+}
+
+.CTG {
+    @include RWD(x-large) {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+.CTG ul {
+    list-style-type: none;
+    margin: 1em 2em 0 2em;
+    display: flex;
+    flex-wrap:wrap;
+    align-items:center;
+    width: 80vw;
+    background-color: white;
+    border: 1em solid white;
+    box-shadow: var(--Shadow-CTG);
+    border-radius: 20px;
+
+    @include RWD(large) {
+        padding: 0;
+        margin: 2rem auto;
+    }
+
+}
+
+.CTG ul li {
+    flex: 1;
+    margin: 0 1.5em;
+    padding:0;
+    text-align:center;
+
+    @include RWD(large) {
+        margin: 1rem 0;
+    }
+
+}
+
+.Categories-Plans-ocult {
+    display: none;
+}
+
+
+.CTG ul li img:not(.Mostrar-Mas a img) {
+    width: 8em;
+    height: 8em;
+    margin:0;
+    padding: 10px;
+    background-color: var(--Col-Background);
+    border-radius: 20px;
+}
+
+.CTG ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.CTG ul li a p {
+    @include RWD(large) {
+        margin-top: 1rem;
+    }
+  
+}
+
+
+.CTG ul li img:hover:not(.Mostrar-Mas a img) {
+    border: 1px solid blue;
+}
+
+
+.Mostrar-Mas {
+    margin: 0;
+}
+
+.Mostrar-Mas a img {
+    margin: 0;
+    width: 2em;
+    height: 2em;
+}
+
+
+/* Slider */
+
+
+.Slider-muestra {
+    width: 100vw;
+    height: 20em;
+    margin: auto;
+    margin-top: 2em;
+    background-color:rgb(156, 156, 156);
+
+    @include RWD(large) {
+        display: none;
+        margin: 0;
+    }
+}
+
+.Slider-imgs-width {
+    width:80rem;
+    height:inherit;
+    padding: 1em;
+    margin:0 10%;
+    transition: all ease-in-out 1s;
+
+    @include RWD(x-large) {
+        width: 80%;
+    }
+
+    @include RWD(large) {
+        width:0;
+    }
+
+}
+
+/* Acomodo de la información del slider */
+
+.Info-ejemplos-slider {
+    position: absolute;
+    width: min-content;
+    margin: 1em 0 0 1em;
+    z-index: 1;
+
+    @include RWD(x-large) {
+        width: 20%;
+    }
+}
+
+
+.img-info-slider {
+    display: inline;
+    width: 12em;
+    height: 12em;
+    margin:3em 0 0 15em;
+    background-color: white;
+    padding: 0.5em;
+}
+
+.titulo-info-slider {
+    position: absolute;
+    top: 1em;
+    left: 15em;
+    width: max-content;
+    color: white;
+    font-size:xx-large;
+}
+
+.info-slider {
+    font-size:xx-large;
+    position: absolute;
+    top: 3em;
+    left: 15em;
+    width: 150%;
+    color: white;
+}
+
+.opacity-bgc {
+    background-color: var(--Color-User-page);
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    z-index: 0;
+
+}
+
+
+
+

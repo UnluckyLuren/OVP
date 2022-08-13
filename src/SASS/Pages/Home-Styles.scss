@@ -1,0 +1,732 @@
+@import "../Utils/Variables";
+@import "../Utils/Mixins";
+
+/* Fondos */
+
+Body {
+    background-size: 100%;
+    background-position-y: 0, 1000px, 2000px, 3260px;
+    background-repeat: no-repeat;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    @include RWD(x-large) {
+        background-size: cover;
+        background-position: top;
+    }
+
+}
+
+
+/* Backgrounds */
+
+.Backgr-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+
+
+.Backgr-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0;
+}
+
+
+
+.Backgr-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0;
+}
+
+
+
+.Backgr-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0;
+}
+
+
+/* Marca en gigante */
+
+.Image-marca-bg-1 img{
+    position: absolute;
+    width: 80%;
+    top: 15em;
+    left: 5em;
+
+    @include RWD(large) {
+        top: 45%;
+        left: 0;
+        width: 100%;
+    }
+}
+
+
+/* Acomodo Indice */
+
+
+.indice {
+    @include RWD(large) {
+       display: none;
+       margin: 0;
+    }
+}
+
+.User-img{
+    @include RWD(large) {
+        display: none;
+        margin: 0;
+    }
+}
+
+
+a.Top-indice-1{
+    margin: 370px;
+}
+
+
+a.Top-indice-2{
+    margin-top: 440px;
+}
+
+
+a.Top-indice-3{
+    margin-top: 650px;
+}
+
+.Top-indice-4 {
+    margin-top: 510px;
+}
+
+.Top-indice-5 {
+    margin-top: 580px;
+}
+
+a.separate{
+    margin-top: 300px;
+}
+
+.indice a{
+    position: absolute;
+    top: 1.5em;
+    margin-left: 95vw ;
+    margin-bottom: 5vw;
+    z-index: 2;
+}
+
+.Color-balls-ind {
+    background-color: rgba(255, 255, 255, 0.733);
+    border-radius: 50%;
+}
+
+
+
+/* Para el menu de arriba */
+
+.Menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* box-shadow: 0 4px 3px rgba(0,0,0,.5); */
+}
+
+/* Estilo Marca de agua */
+
+.Marca{
+   position: absolute;
+   top: 0.9em;
+   right: 1em;
+}
+
+
+/* Posición para los indices */
+
+// #Background-1{
+//     position: absolute;
+//     top:-2em;
+//     left: 0;
+//     color: transparent;
+// }
+
+// #Background-2{
+//     position: absolute;
+//     top:1250px;
+//     color: transparent;
+// }
+
+// #Background-3{
+//     position: absolute;
+//     top:2255px;
+//     color: transparent;
+// }
+
+// #Final{
+//     position: absolute;
+//     top: 4350px;
+//     color: transparent;
+// }
+
+
+/* Estilos para el navegador */
+
+#navegacion ul{
+    list-style-type: none;
+    margin: 120px 0 0 1450px;
+    padding: 30px;
+    position: fixed;
+    background-color: var(--Color-Menu);
+    border-radius: 100px;
+    box-shadow: 0 4px 3px rgba(0,0,0,.5);
+
+    @include RWD(xx-large) {
+        margin-left:70vw ;
+    }
+
+    @include RWD(x-large) {
+        display: none;
+    }
+ }
+
+ #navegacion li{
+   display: inline;
+   font-size: large;
+   margin: 0 50px 0 0;
+ }
+
+ #navegacion li.margen-menu {
+    margin-right: 0 ;
+}
+
+ #navegacion li a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+ }
+
+ #navegacion li a:hover{
+    color: rgb(78, 76, 92);
+ }
+
+
+/* Estilo Iniciar Sesión Registrarse */
+
+
+.Init_Regist ul {
+    background-color: var(--Color-Menu);
+    list-style-type: none;
+    display: flex;
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 5em;
+}
+
+ .Init_Regist li, li.User-img a img {
+   margin:0;
+   padding: 0;
+   margin-right: 1em;
+ }
+
+ .Init_Regist ul li {
+
+    @include RWD(large) {
+        display: none;
+    }
+ }
+
+ .Init_Regist ul li p {
+     color: white;
+     margin: 0 1em;
+     margin-left: 6em;
+     font-size: large;
+ }
+
+
+li.User-img a {
+  
+    position: absolute;
+    top: 1.5em;
+    left: 1em;
+
+}
+/* 
+.sep-acomodo {
+    margin-left: 5em;
+} */
+
+ .Init_Regist li a{
+       /* Estilo */
+       padding: 10px;
+       font-size: large;
+       color: white;
+       text-decoration: none;
+ }
+
+ .Init_Regist li a:hover, a.contact-gmail:hover, li.User-img a img:hover, .Editor-atribuciones a:hover, .text-Atribuciones a:hover {
+    color: rgb(90, 88, 109);
+}
+
+/* Acomodo del menu cuando sea emergente */
+
+.Menu-emergente-image {
+    display: none;
+    position: absolute;
+    z-index: var(--z-Superior);
+
+    @include RWD(large) {
+        display: inline;
+    }
+}
+
+.Menu-emergente-image img {
+    width:3rem;
+    height:3rem;
+    margin: 1rem;
+}
+
+.Menu-emergente {
+    display: none;
+    content:"";
+    position: fixed;
+    top: 5rem;
+    left: -80vw;
+    background-color: var(--color-page);
+    width: 80vw;
+    height: 100vh;
+    z-index: var(--z-container);
+    transition: right 0.2s;
+}
+
+
+.Look-menu-emergente {
+    left: 0;
+}
+
+
+/* Estilos del Aside */
+
+.Menu-aside {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Menu-aside li {
+    margin: 1em 0 0 1em;
+    flex: 1;
+}
+
+.Menu-aside li:first-child:not(.Lista-Categorias li:first-child) {
+    margin: 0;
+    padding:2em 7.5em 0.5em 2em;
+    border-bottom: var(--Separation-aside);
+}
+
+.Menu-aside li a {
+    text-decoration: none;
+    color: black;
+}
+
+.Menu-aside li a img:not(.Perfil-User-menu a img) {
+    width: 1.5em;
+    height: 1.5em;
+    margin:0;
+}
+
+.Perfil-User-menu a img {
+    background-color: white;
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid;
+    border-radius: 50%;
+}
+
+.Menu-aside li:last-of-type {
+    padding-bottom: 1em;
+    border-bottom: var(--Separation-aside);
+}
+
+.Menu-aside li a:hover {
+    color: var(--Color-hover);
+}
+
+.Lista-Categorias li a {
+    margin-top: 1.5em;
+    color:var(--Color-Menu);
+}
+
+.Lista-Categorias li:first-of-type {
+    margin: 2em 0 2em 2em;
+    list-style-type:circle;
+    color: black;
+}
+
+
+/* Imágen usuario */
+
+
+    li.User-img a img /* div */ {
+    background-color: white;
+    border: 3px solid;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 15px;
+    top: -15px;
+    
+     @include RWD(large) {
+        display: none;
+    }
+
+}
+
+.User-img{
+    @include RWD(medium) {
+        display: none;
+    }
+}
+
+
+/* Ventana emergente */
+
+.modal-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.575);
+    justify-content: flex-start;
+    position: absolute;
+    pointer-events: none;
+    opacity:0;
+    top: 5em;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 5;
+
+}
+
+.modal {
+    background-color: var(--Color-User-page);
+    border: 1px solid black;
+    width: 20%;
+    height: 60%;
+    margin: 2em;
+    border-radius: 0.5em;;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.compra {
+    display: flex;
+    flex-direction: column;
+    margin:0 1em;
+}
+
+.info-user-page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.info-user-page img {
+    width:7em;
+    height: 7em;
+    margin: 0;
+    padding: 0.5em;
+    background-color: var(--Color-Menu);
+    border: 2px solid var(--Color-hover);
+    border-radius: 1em;
+
+}
+
+.info-user-page p, .info-text p {
+    color: white;
+    font-size: larger;
+    margin: 1em 1em;
+    padding: 0;
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--Color-hover);
+}
+
+.info-text p:not(.sepr-border) {
+    border: transparent;
+    padding: 0;
+}
+
+.info-text p:first-child {
+    margin-top: 2em;
+}
+
+#close {
+    border-radius: 100px 100px 100px 100px;
+    background-color: rgb(21, 21, 56);
+    width: 3em;
+    height: 3em;
+    align-self: flex-end;
+    margin: 1em;
+    transition: 0.2s;
+}
+
+#close img{
+    margin: 0;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.show {
+    pointer-events: auto;
+    opacity: 1;
+    transition: 0.2s;
+}
+
+
+
+/* Texto Background 2 */
+
+
+div.text-bk2 {
+    display: inline-block;
+    margin: 5em 0 0 2em;
+    padding: 20px;
+    color: white;
+    /* background-color: rgba(0, 0, 0, 0.356); */
+    /* border: 1px solid; */
+    height: min-content;
+    width: 70%;
+    font-size:xx-large;
+    text-shadow: var(--Text-bck-shadow);
+    opacity: 0;
+    pointer-events: none;
+
+    @include RWD(large) {
+        width: 20rem;
+        font-size: large;
+        text-align:justify;
+        padding: 0;
+        margin: 0;
+        margin: 2rem;
+    }
+
+    @include RWD(x-small) {
+        width: 18rem;
+    }
+
+    @include RWD(small) {
+        width: 14rem;
+    }
+
+}
+
+.text-bk2 h1, .text-bk3 h1, .text-bk4 h1 {
+    @include RWD(large) {
+        margin: 0;
+        font-size: x-large;
+    }
+
+}
+
+.text-bk2 p, .text-bk3 p, .text-bk4 p {
+
+    @include RWD(x-small) {
+        font-size:medium;
+    }
+}
+
+/* Textos */
+
+
+div.text-bk3  {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    /* background-color: rgba(0, 0, 0, 0.356); */
+    /* border: 1px solid; */
+    font-size: 1.8em;
+    position: absolute;
+    top: 5em;
+    left: 2em;
+    text-shadow: var(--Text-bck-shadow);
+    opacity: 0;
+    pointer-events: none;
+
+    @include RWD(large) {
+        width: 20rem;
+        font-size: large;
+        // text-align:justify;
+        padding: 0;
+        margin: 1rem 1rem 0 0 ;
+    }
+
+    @include RWD(x-small) {
+        width: 18rem;
+    }
+
+    @include RWD(small) {
+        width: 14rem;
+    }
+
+    & .grafica {
+        @include RWD(large) {
+            width: 80vw;
+        }
+    }
+}
+
+
+.Text-Grafica {
+    // display: flex;
+    // flex-direction: column;
+    display: inline;
+    width: max-content;
+
+    & p {
+        display: inline;
+        margin: 2rem 1rem ;
+    }
+
+    & img {
+        // display: inline;
+        width: 2rem;
+        height:2rem;
+    }
+
+}
+
+
+
+
+
+div.text-bk4 {
+    display: inline-block;
+    margin:0;
+    width: 70%;
+    padding: 0;
+    color: white;
+    /* background-color: rgba(0, 0, 0, 0.356); */
+    /* border: 1px solid; */
+    font-size:1.8em;
+    position: absolute;
+    top: 5em;
+    left: 2em;
+    text-shadow: var(--Text-bck-shadow);
+    opacity: 0;
+    pointer-events:none;
+
+    @include RWD(large) {
+        width: 20rem;
+        font-size: large;
+        padding: 0;
+        margin: 0;
+        margin: 1rem 1rem 0 0 ;
+    }
+
+    @include RWD(x-small) {
+        width: 18rem;
+    }
+
+    @include RWD(small) {
+        width: 14rem;
+    }
+
+}
+
+.text-bk4 h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.text-bk4 pre {
+    margin-left: 2em;
+}
+
+
+a.contact-gmail {
+    color: white;
+    text-decoration: none;
+}
+
+.text-Atribuciones {
+    display: inline-block;
+    position: absolute;
+    top: 19em;
+    left: 35em;
+    padding: 20px;
+    color: white;
+    font-size: large;
+    text-shadow: var(--Text-bck-shadow);
+    opacity: 0;
+
+    @include RWD(large) {
+        position: static;
+        margin: 1rem;
+        font-size: large;
+        display: inline;
+    }
+
+}
+
+.text-Atribuciones div {
+    width: 40vw;
+    @include RWD(large) {
+        width: 20rem;
+        margin: 10vh 1rem 1rem 2rem;
+    }
+}
+
+.text-Atribuciones div h1, .text-Atribuciones div a {
+    @include RWD(large) {
+        font-size: large;
+    }
+}
+
+
+
+.Editor-atribuciones {
+    position: absolute;
+    top: 25em;
+    left: 33em;
+    color: white;
+    font-size:large;
+    width: 32vw;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    opacity: 0;
+
+    @include RWD(x-large) {
+        display: none;
+    }
+
+}
+
+
+.Editor-atribuciones a, .text-Atribuciones a {
+    text-decoration: none;
+    color: rgba(128, 128, 128, 0.863);
+}
+
+

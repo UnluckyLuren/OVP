@@ -1,0 +1,336 @@
+@import "../Utils/Variables";
+@import "../Utils/Mixins";
+@import "../Thems/Styles-Themes";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+/* Fondo */
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/Main/img/img-init-regist/Background-5.jpg);
+    /* background-image: url(""); */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #fff;
+
+    @include RWD(x-large) {
+        background-size: cover;
+        background-position: top;
+    }
+
+}
+
+/* Menu / Navegacion / Marca*/
+
+:root {
+    --Color-Menu:rgba(55, 55, 59, 0.986);
+    --Color-hover:rgb(78, 76, 92);
+    --Text-bck-shadow: 2px 2px 2px rgba(0, 0, 0, 0.411),2px -2px 2px rgb(0, 0, 0), -2px 2px 2px rgb(0, 0, 0), -2px -2px 2px rgb(0, 0, 0);
+    --color-formulario: rgb(51, 51, 51, 0.602);
+    --color-lineas: rgb(255, 255, 255, 0.990);
+}
+.Marca{
+    position: absolute;
+    top: 0.3em;
+    right: 1em;
+}
+
+/* Estilos para el navegador / Navegacion */
+#navegacion {
+    background-color: var(--Color-Menu);
+    height:5em;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position:absolute;
+    top: 0;
+    right: 0;
+}
+#navegacion ul{
+    list-style-type: none;
+    margin-top: 2em;
+    margin-left: 3em;
+ }
+#navegacion li{
+    display: inline;
+    margin: 0;
+    font-size: 1em;
+
+    @include RWD(large) {
+        display: none;
+    }
+
+}
+#navegacion li a {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+}
+#navegacion li a:hover{
+    color: var(--Color-hover);
+}
+#navegacion ul li:last-child {
+    margin-left: 5em;
+}
+
+
+/* Acomodo del menu cuando sea emergente */
+
+.Menu-emergente-image {
+    display: none;
+    position: absolute;
+    z-index: var(--z-Superior);
+
+    @include RWD(medium) {
+        display: inline;
+    }
+}
+
+.Menu-emergente-image img {
+    width:3rem;
+    height:3rem;
+    margin: 1rem;
+}
+
+.Menu-emergente {
+    display: none;
+    content:"";
+    position: fixed;
+    top: 5rem;
+    left: -80vw;
+    background-color: var(--color-page);
+    width: 80vw;
+    height: 100vh;
+    z-index: var(--z-container);
+    transition: right 0.2s;
+}
+
+
+.Look-menu-emergente {
+    left: 0;
+}
+
+
+/* Estilos del Aside */
+
+.Menu-aside {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Menu-aside li {
+    margin: 1em 0 0 1em;
+    flex: 1;
+}
+
+.Menu-aside li:first-child:not(.Lista-Categorias li:first-child) {
+    margin: 0;
+    padding:2em 7.5em 0.5em 2em;
+    border-bottom: var(--Separation-aside);
+}
+
+.Menu-aside li a {
+    text-decoration: none;
+    color: black;
+}
+
+.Menu-aside li a img:not(.Perfil-User-menu a img) {
+    width: 1.5em;
+    height: 1.5em;
+    margin:0;
+}
+
+.Perfil-User-menu a img {
+    background-color: white;
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid;
+    border-radius: 50%;
+}
+
+.Menu-aside li:last-of-type {
+    padding-bottom: 1em;
+    border-bottom: var(--Separation-aside);
+}
+
+.Menu-aside li a:hover {
+    color: var(--Color-hover);
+}
+
+.Lista-Categorias li a {
+    margin-top: 1.5em;
+    color:var(--Color-Menu);
+}
+
+.Lista-Categorias li:first-of-type {
+    margin: 2em 0 2em 2em;
+    list-style-type:circle;
+    color: black;
+}
+
+
+
+
+// Inicio de Sass ---------------------------------------------------------
+/* Inicio de Sass --------------------------------------------------------- */
+
+.container-form {
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    transition: all .5s ease-out;
+
+    /* ventana inicio/regis */
+    .welcome-back { /* Acomodo */
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .message {
+        padding: 1 rem;
+        & h2{
+            font-size: 1.7rem;
+            padding: 1rem 0;
+        }
+        & button {
+            padding: 1rem;
+            font-weight: 400;
+            background-color: var(--Color-Menu);
+            border-radius: 2rem;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: .9rem;
+            margin-top: 2rem;
+            transition: all .3s ease-in;
+            color: var(--color-lineas);
+
+        }
+        
+        & button:hover { /* Cambio de color */
+            background-color: var(--Color-hover);
+        }
+        & p { /* Aviso de invitado */
+            padding-top: 2em;
+        }
+    }
+    
+    .formulario {
+        background-color: var(--color-formulario);
+        width: 400px;
+        padding: 1rem;
+        margin: 2rem;
+        margin-top: 5em;
+        text-align: center;
+        border-radius: 15px;
+
+        & a {
+            color: rgb(214, 214, 214);
+            text-decoration: none;
+        }
+        
+        & .create-account { /* Separado de formulario */
+            padding: 2.7rem 0;
+            font-size: 1.7rem;
+        }
+        
+        & .iconos { /* Tamaño de imagen */
+            width: 50px;
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+        }
+        & #checkid {
+            width: 15px;
+            display: inline;
+        }
+        
+        & .cuenta-gratis { /* Separado */
+            padding: 2rem 0;
+        }
+        
+        & input { /* Diseño formulario */
+            width: 70%;
+            display: block;
+            margin: auto;
+            margin-bottom: 2rem;
+            background-color: transparent;
+            border: none;
+            border-bottom: var(--color-lineas) thin solid;
+            text-align: center;
+            outline: none;
+            padding: .2rem 0;
+            font-size: .9rem;
+            color: var(--color-lineas);
+        }
+        
+        & input[type="button"] { /* Diseño boton/formulario */
+            width: 60%;
+            margin: auto;
+            border: solid thin var(--color-lineas);
+            padding: .7rem;
+            border-radius: 2rem;
+            background-color: var(--color-lineas);;
+            font-weight: 600;
+            margin-top: 3rem;
+            font-size: .8rem;
+            cursor: pointer;
+            color: #222;
+
+            @include RWD(large) {
+                margin: 1rem auto;
+            }
+        }
+
+    } 
+}
+
+.sign-in {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.button-a-style {
+    text-decoration: none;
+}
+
+.sign-in.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sign-up.active {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.Link-change-1 {
+    display: none;
+    @include RWD(large) {
+        display: inline;
+    }
+}
+
+.Link-change-2 {
+    display: none;
+    @include RWD(large) {
+        display: inline;
+    }
+}
+
+
+
+
+
+

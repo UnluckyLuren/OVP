@@ -1,0 +1,568 @@
+@import "../Utils/Variables";
+@import "../Utils/Mixins";
+
+*, *::before,::after { 
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+body {  /* fondo */
+    background-image: url(/Main/img/Background-4.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    @include RWD(x-large) {
+        background-size: cover;
+        background-position: top;
+
+    }
+
+}
+.Quite-Form-scroll {
+    overflow: hidden;
+}
+
+.Form-scroll{
+    overflow-x: hidden;
+}
+
+
+:root {
+    --Color-Menu:rgba(55, 55, 59, 0.986);
+    --Color-hover:rgb(78, 76, 92);
+    --Color-fondo: rgba(223, 221, 221, 0.9)
+}
+
+
+/* Código Barra de Navegación */
+#navegacion ul{
+    list-style-type: none;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    padding: 30px;
+    background-color: var(--Color-Menu);
+    border-radius: 100px;
+    box-shadow: 0 4px 3px rgba(0,0,0,.5);
+
+    @include RWD(x-large) {
+        margin:0;
+        display: none;
+    }
+}
+
+#navegacion li{
+   display: inline;
+   font-size: large;
+   margin: 0 50px 0 0;
+}
+
+#navegacion li.margen-menu {
+    margin-right: 0;
+}
+
+#navegacion li a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+#navegacion li a:hover{
+    color: var(--Color-hover);
+}
+
+
+/* Acomodo del menu cuando sea emergente */
+
+.Menu-emergente-image {
+    display: none;
+    position: fixed;
+    right: 0;
+    z-index: var(--z-Superior);
+
+    @include RWD(large) {
+        display: inline;
+    }
+}
+
+.Menu-emergente-image img {
+    width:3rem;
+    height:3rem;
+    margin: 1rem;
+}
+
+.Menu-emergente {
+    display: none;
+    content:"";
+    position: fixed;
+    top: 5rem;
+    right: -80vw;
+    background-color:white;
+    width: 80vw;
+    height: 100vh;
+    z-index: var(--z-container);
+    transition: right 0.2s;
+}
+
+
+.Look-menu-emergente {
+    right: 0;
+}
+
+
+/* Estilos del Aside */
+
+.Menu-aside {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Menu-aside li {
+    margin: 1em 0 0 1em;
+    flex: 1;
+}
+
+.Menu-aside li:first-child:not(.Lista-Categorias li:first-child) {
+    margin: 0;
+    padding:2em 7.5em 0.5em 2em;
+    border-bottom: var(--Separation-aside);
+}
+
+.Menu-aside li a {
+    text-decoration: none;
+    color: black;
+}
+
+.Menu-aside li a img:not(.Perfil-User-menu a img) {
+    width: 1.5em;
+    height: 1.5em;
+    margin:0;
+}
+
+.Perfil-User-menu a img {
+    background-color: white;
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid;
+    border-radius: 50%;
+}
+
+.Menu-aside li:last-of-type {
+    padding-bottom: 1em;
+    border-bottom: var(--Separation-aside);
+}
+
+.Menu-aside li a:hover {
+    color: var(--Color-hover);
+}
+
+.Lista-Categorias li a {
+    margin-top: 1.5em;
+    color:var(--Color-Menu);
+}
+
+.Lista-Categorias li:first-of-type {
+    margin: 2em 0 2em 2em;
+    list-style-type:circle;
+    color: black;
+}
+
+
+
+
+
+/* Código Carlos */
+
+#container { /* Barra lateral  */
+    position: fixed;
+    width: 70px;
+    height: 100vh;
+    background: var(--Color-Menu);
+
+    @include RWD(large) {
+        display: none;
+    }
+}
+
+        /* Planos caracteristicas */
+#container img {
+    width: 40px;
+    margin-left: 20%;
+    margin-top: 53em;
+}
+#container img:hover {
+    width: 55px;
+    margin-left: 10%;
+    transition: all 0.2s;
+}
+
+/* Pagina organisada */
+.content {
+    display: flex;
+    flex: 1;
+}
+
+main {
+    flex: 1;
+    /* background: red; */
+}
+
+aside {
+    width: 21%;
+    order: -1;
+    /* background: blue; */
+}
+
+        /* Titulo */
+.title {
+    padding-left: 3em;
+    position: fixed;
+    color: white;
+
+    @include RWD(large) {
+        top: 0;
+        right: 0;
+        padding: 2rem;
+        margin: 0;
+        background-color: var(--Color-Menu);
+        width:100vw;
+        height:5rem;
+    }
+
+}
+
+/* Texto barra */
+.menu {
+    margin-left: 6em;
+    padding: 0;
+}
+
+.menu li {
+    list-style-type: none;
+    margin-top: 1em;
+    
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+}
+
+hr {
+    background: gray;
+    padding: 2px;
+    margin: 2em 4em 0 0;
+    border-radius: 20px;
+    opacity: 0.2;
+}
+
+/* Planos de proyecto */
+
+.tus-proyectos {
+    display: flex;
+    width:90%;
+    flex-wrap: wrap;
+    color:white;
+    // background: yellow; 
+}
+
+.Tus-proyectos-h2 {
+
+    @include RWD(large) {
+        margin-top: 6rem;
+    }
+}
+
+
+.planos {
+    margin: 2em 1em;
+    width: 230px;
+    height: 16em;
+    border-color: black;
+    background: var(--Color-fondo);
+    border-radius: 20px; /* Bordes cuerveadps */
+    box-shadow: 4px 3px 7px 0 grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.planos:first-child {
+    margin-left: 1em;
+}
+
+.planos img {
+    margin: 1em 0;
+    padding: 0;
+    flex: 1;
+    width: 60%;
+    height: 20%;
+}
+
+.planos a img {
+    width: 40%;
+    height: 80%;
+    margin:  0.5em 0 0 2em;
+}
+
+.planos p {
+    color: black;
+}
+
+.planos p:last-child {
+    margin-bottom: 1em;
+}
+
+.planos:hover {
+    background: gray;
+    transition: all 0.2s;
+}
+
+
+        /* Nombres de planos */
+h1 {
+    margin: 1em 0 0 1.3em;
+}
+
+h2 { 
+    margin-top: 2em;
+    color: white;
+}
+
+/* Crear nuevo */
+
+.Desactivar-form {
+display: none;
+}
+
+.crear-0 {
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.crear-0 input { 
+    margin-top: 1em;
+    background-color: transparent;
+    border: transparent;
+    padding: 0 0.5em;
+    color: white;
+    border-bottom: 2px solid black;
+}
+
+.crear-0 input::placeholder {
+    color: black;
+    opacity: 0.7;
+}
+
+.crear-0 a button {
+    width: 10em;
+    margin: 1em 0 2em 2em;
+    border-radius: 5em;
+}
+
+/* Ventana emergente */
+
+.modal-container {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    width: 100vw;
+    z-index: 8;
+}
+
+.modal {
+    position: absolute;
+    left: 30%;
+    top: 15%;
+    background-color: var(--Color-Menu);
+    border: 1px solid black;
+    width: 40%;
+    height: 75%;
+    margin: 0;
+    border-radius: 0.5em;;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 9;
+}
+
+.compra {
+    display: flex;
+    flex-direction: column;
+    margin:0 1em;
+}
+
+
+#close {
+    border-radius: 100px 100px 100px 100px;
+    background-color: rgb(21, 21, 56);
+    width: 3em;
+    height: 3em;
+    align-self: flex-end;
+    margin: 1em;
+    transition: 0.2s;
+}
+
+#close img{
+    margin: 0;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.show {
+    display:block;
+    transition: 0.5s;
+}
+
+/* Diseño del formulario para contratar */
+
+.Formulario-experto label{
+    font-size:large;
+    color: white;
+
+}
+
+.Formulario-experto select {
+    width: 50%;
+    padding: 0.5em;
+    margin-top: 1em;
+    font-size: medium;
+    border-color: grey;
+    background-color:var(--Color-fondo);
+    border-radius: 1em;
+}
+
+.Formulario-experto div input{
+    width: 5em;
+    padding: 0.5em;
+    margin: 1em 0 0 1em ;
+    border-radius: 1em;
+    font-size:medium;
+    border-color: black;
+    background-color: var(--Color-fondo);
+}
+
+.Formulario-experto div input::placeholder {
+    color: black;
+    opacity: 0.6;
+}
+
+.Formulario-experto .contact-cor-tel input {
+    border-radius: 0.5em;
+    width: 15em;
+}
+
+.Formulario-experto div input:hover, .compra div a button:hover {
+    color: white;
+    background-color: var(--Color-hover);
+}
+
+.compra div a button {
+    font-size: large;
+    padding: 1em;
+    margin:1em 0 0 1em;
+    border-radius: 1em;
+    color: white;
+    background-color: grey;
+    border-color: black;
+}
+
+.compra div p {
+    color: white;
+    font-size: x-large;
+    margin-top: 1.5em;
+}
+
+.sepr-formu{
+    border: 1px solid var(--Color-fondo);
+    margin: 1.5em 1em;
+}
+
+        /* Barra de planos */
+.barra:not(.Mostrar-mas img) {  
+    margin-top: 2em;
+    background: var(--Color-fondo); /* Fondo blanco */
+    border-color: transparent; /* Quita bordes blancos */
+    width: min-content; /* Tamaño horizontal */
+    height: 23vh; /* Tamaño vertical */
+    border-radius: 20px; /* Bordes cuerveadps */
+    box-shadow: 4px 3px 7px 0 grey;
+
+    @include RWD(large) {
+        display: none;
+    }
+}
+
+.Planos-recomendados-h2 {
+    @include RWD(large) {
+        display: none;
+    }
+}
+
+.content h2:first-child {
+    margin-top: 5em;
+}
+
+.Casas-G ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // @include RWD(x-large) {
+
+    // }
+
+}
+
+.Casas-G ul li {
+    flex: 1;
+    margin: 1.5em 0 0 0;
+
+}
+
+.Casas-G ul li:first-child {
+    margin-left: 1em;
+}
+
+.Casas-G ul li a img:not(.Mostrar-mas a img){  /* Caracteristicas de Planos */
+    padding: 0;
+    width: 15em;
+    height: 9em;
+    margin: 0 3em 0.5em 0;
+}
+
+.Casas-G ul li a img:hover:not(.Mostrar-mas a img){ /* Borde negro al pasar el mouse */
+    border: 2px solid #05003885;
+    border-radius: 7px;
+    padding: 5px;
+    transition: all .2s;
+    margin-left: auto;
+}
+
+.Mostrar-mas a img{
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    content: " ";
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
