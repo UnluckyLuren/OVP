@@ -3,7 +3,7 @@
 @import "../Components/Final-Footer";
 
 Body {
-    background-image: url(../Main/img/BG-Invitado.jpg);
+    background-image: url(/docs/Main/img/BG-Invitado.jpg);
     background-repeat: no-repeat;
     background-size:100vw;
     background-color: var(--color-page);
@@ -582,7 +582,7 @@ li.User-img a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("../Main/img/Arquitectura.jpg");
+    background-image: url("/docs/Main/img/Arquitectura.jpg");
     background-position:center;
     background-attachment:fixed;
 }
