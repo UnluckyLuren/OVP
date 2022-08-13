@@ -11,18 +11,18 @@ let num_interval=5000
 
 /* Poner la dirección de las imagenes */
 
-Img_Backslide_1.src="/Main/img/Background-1.jpg"
-Img_Backslide_2.src="/Main/img/Background-2.jpg"
-Img_Backslide_3.src="/Main/img/Background-3.jpg"
-Img_Backslide_4.src="/Main/img/Background-4.jpg"
+Img_Backslide_1.src="../img/Background-1.jpg"
+Img_Backslide_2.src="../img/Background-2.jpg"
+Img_Backslide_3.src="../img/Background-3.jpg"
+Img_Backslide_4.src="../img/Background-4.jpg"
 
 
 /* Imagenes de las categorias de los planos */
 
-const Source_plano_In = "/Main/img/Img Catalogo/Planos Casas Infonavit/10.jpeg"
-const Source_plano_Me = "/Main/img/Img Catalogo/Planos Casas Infonavit/4.jpeg"
-const Source_plano_Grand = "/Main/img/Img Catalogo/Planos Casas Infonavit/Plano-Infonavit-15-x-10-mts.png"
-const Source_plano_Resi = "/Main/img/Img Catalogo/Planos Casas Infonavit/6.jpeg"
+const Source_plano_In = "../img/Img Catalogo/Planos Casas Infonavit/10.jpeg"
+const Source_plano_Me = "../img/Img Catalogo/Planos Casas Infonavit/4.jpeg"
+const Source_plano_Grand = "../img/Img Catalogo/Planos Casas Infonavit/Plano-Infonavit-15-x-10-mts.png"
+const Source_plano_Resi = "../img/Img Catalogo/Planos Casas Infonavit/6.jpeg"
 
 
 
