@@ -14,11 +14,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(/Main/img/img-init-regist/Background-5.jpg);
+    background-image: url(./img/img-init-regist/Background-5.jpg);
     /* background-image: url(""); */
     background-repeat: no-repeat;
     background-size: 100%;
-    color: #fff;
+    color:#fff;
 
     @include RWD(x-large) {
         background-size: cover;
