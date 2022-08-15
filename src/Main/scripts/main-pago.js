@@ -144,7 +144,7 @@ function Remove_bank() {
 
 visa.addEventListener('click', () => {
 	delantera.classList.add('fondodetarjeta')
-	delantera.style.background = "url(../Main/img/img-pago/bg-tarjeta/modelo-Visa.png)"
+	delantera.style.background = "url(../Main/img/img-pago/bg-tarjeta/modelo-visa.png)"
 	Remove_bank()
 	nombrebank.style.display = "none"
 	logo.src="img/img-pago/logos/visa.png"
