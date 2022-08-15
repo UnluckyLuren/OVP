@@ -317,7 +317,7 @@ body {
 
 .contenedor .tarjeta .tarjeta {
   width: 100%;
-  background: url(../Main/img/img-pago/bg-tarjeta/modelo-normal.png);
+  background: url(../Main/img/img-pago/modelo-normal.png);
   background-size: cover;
 }
 
@@ -335,7 +335,7 @@ body {
 
 .contenedor .delantera {
   width: 100%;
-  background: url(../Main/img/img-pago/bg-tarjeta/modelo-normal.png);
+  background: url(../Main/img/img-pago/modelo-normal.png);
   background-size: cover;
 }
 
