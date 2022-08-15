@@ -144,7 +144,7 @@ function Remove_bank() {
 
 visa.addEventListener('click', () => {
 	delantera.classList.add('fondodetarjeta')
-	delantera.style.background = "url(img/img-pago/bg-tarjeta/modelo-visa.png)"
+	delantera.style.background = "url(../img/img-pago/bg-tarjeta/modelo-visa.png)"
 	Remove_bank()
 	nombrebank.style.display = "none"
 	logo.src="img/img-pago/logos/visa.png"
@@ -155,7 +155,7 @@ visa.addEventListener('click', () => {
 
 mastercard.addEventListener('click', () => {
 	delantera.classList.add('fondodetarjeta')
-	delantera.style.background = "url(img/img-pago/bg-tarjeta/modelo-mastercard.png)"
+	delantera.style.background = "url(../img/img-pago/bg-tarjeta/modelo-mastercard.png)"
 	Remove_bank()
 	nombrebank.style.display = "none"
 	logo.src="img/img-pago/logos/mastercard.png"
@@ -165,7 +165,7 @@ mastercard.addEventListener('click', () => {
 
 paypal.addEventListener('click', () => {
 	delantera.classList.add('fondodetarjeta')
-	delantera.style.background = "url(img/img-pago/bg-tarjeta/modelo-paypal.png)"
+	delantera.style.background = "url(../img/img-pago/bg-tarjeta/modelo-paypal.png)"
 	Remove_bank()
 	nombrebank.style.display = "none"
 	logo.src="img/img-pago/logos/logo-Paypal.png"
@@ -175,7 +175,7 @@ paypal.addEventListener('click', () => {
 
 santander.addEventListener('click', () => {
 	delantera.classList.add('fondodetarjeta')
-	delantera.style.background = "url(img/img-pago/bg-tarjeta/modelo-santander.png)"
+	delantera.style.background = "url(../img/img-pago/bg-tarjeta/modelo-santander.png)"
 	Remove_bank()
 	nombrebank.style.display = "none"
 	logo.src="img/img-pago/logos/Logo-santander.png"
